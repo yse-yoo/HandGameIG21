@@ -15,6 +15,17 @@ public class Window extends JFrame{
 	JPanel handPanel;
 	JPanel resultPanel;
 	JPanel buttonPanel;
+	
+	//Handのインスタンス変数
+	Hand hand;
+	
+
+	//コンストラクタ（Handクラスを渡す）
+	public Window(Hand hand) {
+		super();
+		this.hand = hand;
+	}
+
 
 	public void create() {
 		//フレームのサイズ
