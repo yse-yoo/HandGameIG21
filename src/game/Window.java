@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -47,7 +49,13 @@ public class Window extends JFrame implements ActionListener {
 		//ラベルの作成
 		handLabel = new JLabel("PC:", JLabel.CENTER);
 		resultLabel = new JLabel("じゃんけん", JLabel.CENTER);
-
+		
+		Font font = new Font("ＭＳ ゴシック",Font.BOLD, 50);
+		handLabel.setFont(font);
+		resultLabel.setFont(font);
+		
+		resultLabel.setForeground(Color.red);
+		
 		//パネル作成
 		handPanel = new JPanel();
 		handPanel.add(handLabel);
@@ -71,11 +79,11 @@ public class Window extends JFrame implements ActionListener {
 			ImageIcon icon = new ImageIcon(imagePath);
 			JButton handButton = new JButton(icon);
 			
+			//action commandで、グー、チョキ、パーの文字を追加
+			handButton.setActionCommand(Hand.hands[i]);
+			
 			//イベント追加
 			handButton.addActionListener(this);
-			
-			//action commandを追加
-			handButton.setActionCommand(Hand.hands[i]);
 			
 			//パネルに追加
 			buttonPanel.add(handButton);
