@@ -33,6 +33,19 @@ public class Hand {
 		this.pcHand = hands[handIndex];
 		System.out.println("PC:" + this.playerHand);
 
+		//ジャッジ
+		if (this.playerHand == this.pcHand) {
+			//Draw
+			this.result = "Draw";
+		} else {
+			this.result = 
+					( 
+						(this.playerHand == ROCK && this.pcHand == SCISSORS) 
+						|| (this.playerHand == SCISSORS && this.pcHand == PAPER) 
+						|| (this.playerHand == PAPER && this.pcHand == ROCK) 
+					)
+					? "Win!" : "Lose!";
+		}
 		
 	}
 
