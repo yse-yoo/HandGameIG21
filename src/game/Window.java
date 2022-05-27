@@ -1,12 +1,15 @@
 package game;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Window extends JFrame{
+public class Window extends JFrame implements ActionListener {
 	
 	//ラベル
 	JLabel handLabel;
@@ -62,6 +65,9 @@ public class Window extends JFrame{
 			System.out.println(Hand.hands[i]);
 			
 			JButton handButton = new JButton(Hand.hands[i]);
+			
+			handButton.addActionListener(this);
+			
 			//パネルに追加
 			buttonPanel.add(handButton);
 		}
@@ -73,4 +79,16 @@ public class Window extends JFrame{
 		setVisible(true);
 
 	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String playerHand = e.getActionCommand();
+		hand.play(playerHand);
+		
+		//ラベルに設定
+		handLabel.setText("PC: " + hand.pcHand);
+		resultLabel.setText(hand.result);
+	}
+
 }

@@ -31,7 +31,7 @@ public class Hand {
 		Random random = new Random();
 		int handIndex = random.nextInt(3);
 		this.pcHand = hands[handIndex];
-		System.out.println("PC:" + this.playerHand);
+		System.out.println("PC:" + this.pcHand);
 
 		//ジャッジ
 		if (this.playerHand == this.pcHand) {
