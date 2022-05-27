@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -33,7 +34,7 @@ public class Window extends JFrame implements ActionListener {
 
 	public void create() {
 		//フレームのサイズ
-		setBounds(300, 200, 300, 200);
+		setBounds(300, 200, 800, 400);
 		
 		//ウィンドウを閉じた時の処理
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -62,11 +63,19 @@ public class Window extends JFrame implements ActionListener {
 		//ボタン追加
 		buttonPanel = new JPanel();
 		for (int i = 0; i < Hand.hands.length; i++) {
-			System.out.println(Hand.hands[i]);
+			//テキスト版
+//			JButton handButton = new JButton(Hand.hands[i]);
+
+			//アイコン画像版
+			String imagePath = "./images/" + Hand.images[i];
+			ImageIcon icon = new ImageIcon(imagePath);
+			JButton handButton = new JButton(icon);
 			
-			JButton handButton = new JButton(Hand.hands[i]);
-			
+			//イベント追加
 			handButton.addActionListener(this);
+			
+			//action commandを追加
+			handButton.setActionCommand(Hand.hands[i]);
 			
 			//パネルに追加
 			buttonPanel.add(handButton);

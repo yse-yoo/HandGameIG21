@@ -13,6 +13,10 @@ public class Hand {
 	final static String[] hands = {
 		ROCK, SCISSORS, PAPER
 	};
+	
+	final static String[] images = {
+		"rock.png", "siccors.png", "paper.png"
+	};
 
 	//フィールド
 	//インスタンス変数
