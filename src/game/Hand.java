@@ -1,6 +1,7 @@
 package game;
 
 public class Hand {
+	//staticはインスタンスでは利用できない
 	//定数（final）
 	final static String ROCK = "グー";
 	final static String SCISSORS = "チョキ";

@@ -57,9 +57,9 @@ public class Window extends JFrame{
 		
 		//ボタン追加
 		buttonPanel = new JPanel();
-//		for (int i = 0; i < Hand.hands.length; i++) {
-//			
-//		}
+		for (int i = 0; i < Hand.hands.length; i++) {
+			System.out.println(Hand.hands[i]);
+		}
 
 
 		//フレームを表示（一番最後に実行）
