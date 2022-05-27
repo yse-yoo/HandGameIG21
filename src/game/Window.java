@@ -50,10 +50,16 @@ public class Window extends JFrame{
 		resultPanel = new JPanel();
 		resultPanel.add(resultLabel);
 		
-		
 		//JFrameにパネル追加:
 		add(handPanel);
 		add(resultPanel);
+		
+		
+		//ボタン追加
+		buttonPanel = new JPanel();
+//		for (int i = 0; i < Hand.hands.length; i++) {
+//			
+//		}
 
 
 		//フレームを表示（一番最後に実行）
