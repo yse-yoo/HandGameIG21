@@ -40,6 +40,7 @@ public class Window extends JFrame{
 		resultPanel.add(resultLabel);
 		
 		
+		//JFrameにパネル追加:
 		add(handPanel);
 		add(resultPanel);
 
