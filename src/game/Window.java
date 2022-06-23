@@ -41,10 +41,11 @@ public class Window extends JFrame implements ActionListener {
 		//ウィンドウを閉じた時の処理
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		
 		//ボックスレイアウト（コンポーネントを整列）
 		BoxLayout boxlayout = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
 		setLayout(boxlayout);
+		
+		
 		
 		//ラベルの作成
 		handLabel = new JLabel("PC:", JLabel.CENTER);
@@ -58,9 +59,11 @@ public class Window extends JFrame implements ActionListener {
 		
 		//パネル作成
 		handPanel = new JPanel();
+		handPanel.setBackground(Color.white);
 		handPanel.add(handLabel);
 
 		resultPanel = new JPanel();
+		resultPanel.setBackground(Color.white);
 		resultPanel.add(resultLabel);
 		
 		//JFrameにパネル追加:
@@ -70,6 +73,7 @@ public class Window extends JFrame implements ActionListener {
 		
 		//ボタン追加
 		buttonPanel = new JPanel();
+		buttonPanel.setBackground(Color.white);
 		for (int i = 0; i < Hand.hands.length; i++) {
 			//テキスト版
 //			JButton handButton = new JButton(Hand.hands[i]);
@@ -94,7 +98,6 @@ public class Window extends JFrame implements ActionListener {
 
 		//フレームを表示（一番最後に実行）
 		setVisible(true);
-
 	}
 
 
